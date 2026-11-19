@@ -5,9 +5,9 @@ How did flood wave propagation velocity compare against institutional early-warn
 ## Data
 |File| Description| Source|
 
-|"raw_data/flood_affected_area.shp"| shapefile of the area affected by flood| HDX
-|"raw_data/impact_npl_s1_k50_damage_screening_admin3_v3.csv"| total impact caused by flood in different area| HDX
-|"raw_data/hotosm_npl_points_of_interest_osm_shp"|  Shapefile of the flood affected area| HDX
+|"raw_data/flood_affected_area.shp"| shapefile of the area affected by flood| https://data.humdata.org/dataset/hot_flood_npl
+|"raw_data/impact_npl_s1_k50_damage_screening_admin3_v3.csv"| total impact caused by flood in different area| https://data.humdata.org/dataset/nepal-flash-flood-damage-assessment-using-sentinel-1-radar-data/resource/6f5c06d2-446f-4ae8-b02f-813f9b8c10c5
+|"raw_data/hotosm_npl_points_of_interest_osm_shp"|  Shapefile of the flood affected area| http://data.humdata.org/dataset/hotosm_npl_points_of_interest
 |"raw_data/hot_flood_npl_destroyed_features_osm_shp"| shapefile of the features destroyed by flood| HDX https://data.humdata.org/dataset/hot_flood_npl
 |"raw_data/Bhotekoshi-Trishuli_Flood_Update_From_August_26_2026_to_October_3_2026"|official mass SMS dispatch timestamps|https://ndrrma.gov.np/mediafiles/publications/Bhotekoshi-Trishuli_Flood_Update_From_August_26_2026_to_October_3_2026.pdf
 |"raw_data/CHWRR Report II"|Station-by-station flood arrival/gauge failure timestamps, river chainage distances (km), water levels, and official mass SMS dispatch timestamps| https://chwrr.gov.np/content/57/report-on-rasuwa-bhotekoshi-flood-incident-2083--assessment/
@@ -22,7 +22,7 @@ Rasuwa_flashfloood_analysis_2026/
 │ └── hot_flood_npl_destroyed_features_osm_shp
   └──flood_affected_area.shp
 ├── clean_data/ ← output of 1_data_clean.ipynb
-│ └── stream_temp_clean.csv
+│ └── Rasuwa_flashflood_analysis_2026.csv
 ├── figures/ ← plots and tables (coming in later scripts)
 └── scripts/ ← notebooks, numbered in the order they run
 ├── 0_project_setup.ipynb
@@ -35,5 +35,11 @@ Google Drive.
 writes `clean_data/Rasuwa_flashdlood_analysis_2026.csv`.
 Each notebook mounts Google Drive with one Python cell (`drive.mount()`), then
 switches to the R runtime. See the notes at the top of each notebook.
-   ## status and next steps
+   ## Known data Issues
+   CHWRR Report II & Trishuli_Flood_Update_From_August_26_2026_to_October_3_2026 are the official report from government of Nepal. It has all the data I need to analyze river log time, warning time and all the detail information of the flash flood and i could not find csv file for this, so i have to make csv from these file.
+ ## status and next steps
+ Clean and combine the raw data. Explore the data cleaning and analyzing steps and how to clean shp file.
+Still searching for data if any found in more systematic order.
+ ## AI Disclosure
+ I used AI as a assistance to search for the techniques to clean satellite data.
    
